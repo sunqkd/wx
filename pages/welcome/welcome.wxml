@@ -1,0 +1,12 @@
+<!-- wxml 相当于html
+view 相当于 div
+image 相当于 img
+text 文本标签 在手机上可以长按选中  text 可以嵌套
+ -->
+<view class="container">
+    <image class="user_avator" src="/image/1.jpg"></image>
+    <text class="user_name"><text style="color:red">hello</text>,12月</text>
+    <view class="moto_container">
+        <text class="moto">开启小程序之路</text>
+    </view>
+</view>

@@ -1,0 +1,29 @@
+<view>
+    <swiper indicator-dots="true" autoplay="true" interval="5000" circular="true">
+        <swiper-item>
+            <image src="/image/img1.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/image/img2.png"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/image/img3.jpg"></image>
+        </swiper-item>
+    </swiper>
+    <!-- 列表组件 -->
+    <view class="post-container">
+        <view class="post-author-date">
+            <image class="post-author" src='/image/1.jpg'></image>
+            <text class="post-date">Nov 25 2018</text>
+        </view>
+        <text class="post-title">正是虾肥蟹壮时</text>
+        <image src="/image/img1.jpg"></image>
+        <text>正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时</text>
+        <view>
+            <image src='/image/1.jpg'></image>
+            <text>92</text>
+            <image src='/image/1.jpg'></image>
+            <text>45</text>
+        </view>
+    </view>
+</view>

@@ -19,7 +19,7 @@ Page({
         // 跳转到子界面
 
         wx.navigateTo({
-            url: '/pages/posts/postDetail/postdetail',
+            url: '/pages/posts/postDetail/postdetail?id=' + postid,
         })
     },
     /**

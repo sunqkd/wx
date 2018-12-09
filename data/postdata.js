@@ -1,5 +1,6 @@
 
 var local_database = [{
+        postId:0,
         date: "Nov 25 2018",
         title: "正是虾肥蟹壮时",
         post_img: '/image/img1.jpg',
@@ -9,6 +10,7 @@ var local_database = [{
         author_img: "/image/1.jpg"
     },
     {
+        postId: 1,
         date: "Nov 26 2018",
         title: "正是虾肥蟹壮时",
         post_img: '/image/img1.jpg',

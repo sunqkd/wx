@@ -1,7 +1,9 @@
 {
     "pages":[
+        "pages/posts/postDetail/postdetail",
         "pages/welcome/welcome",
         "pages/posts/post"
+        
     ],
     "window":{
         "navigationBarBackgroundColor":"#b3d4db"

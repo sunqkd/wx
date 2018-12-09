@@ -1,0 +1,22 @@
+<view class="container">
+    <image src="/image/img4.jpg" class="header-image"></image>
+    <view class="author-data">
+        <image src="/image/img1.jpg" class="avatar"></image>
+        <text class="authorname">胡歌</text>
+        <text class="const-text">发表与</text>
+        <text class="date">三天前</text>
+    </view>
+    <text class="title">文章标题</text>
+    <view class="tool">
+        <view class="circle">
+            <image src="/image/1.jpg"></image>
+            <image class="share-img" src="/image/1.jpg"></image>
+        </view>
+        <view class="horizon">
+        </view>
+    </view>
+
+    <text class="detail">
+    文章正文
+    </text>
+</view>

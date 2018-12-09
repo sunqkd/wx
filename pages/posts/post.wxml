@@ -21,45 +21,13 @@
 
     <!-- template 模板 -->
     <block wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <!-- 自定义属性 data- + 自定义名字 -->
+        <view catchtap='onPostTap' data-postid="{{item.postId}}" data-post-name="123">
+        
+            <!-- template   自定义模板只能为wxml、wxss 并不是 自定义组件  ...展开对象-->
+            <template is="postItem" data="{{...item}}"></template>
 
-        <!-- <view class="post-container">
-            <view class="post-author-date">
-                <image class="post-author" src="{{item.author_img}}"></image>
-                <text class="post-date">{{item.date}}</text>
-            </view>
-            <text class="post-title">{{item.title}}</text>
-            <image class="post-image" src="{{item.post_img}}"></image>
-            <text class='post-content'>{{item.content}}</text>
-            <view class="post-like">
-                <image class="post-like-image" src="{{item.post_img}}"></image>
-                <text class="post-like-font">{{item.view_num}}</text>
-                <image class="post-like-image" src="{{item.post_img}}"></image>
-                <text class="post-like-font">{{item.collect_num}}</text>
-            </view>
-        </view> -->
-
-        <!-- template   自定义模板只能为wxml、wxss 并不是 自定义组件-->
-        <template is="postItem" data="{{item}}"></template>
-
+        </view>
     </block>
-
-
-
-    <!-- <view class="post-container">
-        <view class="post-author-date">
-            <image class="post-author" src='/image/1.jpg' wx:if="{{false}}"></image>
-            <text class="post-date">Nov 25 2018</text>
-        </view>
-        <text class="post-title">正是虾肥蟹壮时</text>
-        <image class="post-image" src="/image/img1.jpg"></image>
-        <text class='post-content'>正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时</text>
-        <view class="post-like">
-            <image class="post-like-image" src='/image/1.jpg'></image>
-            <text class="post-like-font">92</text>
-            <image class="post-like-image" src='/image/1.jpg'></image>
-            <text class="post-like-font">45</text>
-        </view>
-    </view> -->
-
 
 </view>

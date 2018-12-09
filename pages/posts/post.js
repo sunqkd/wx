@@ -11,6 +11,17 @@ Page({
     data: {
 
     },
+    onPostTap:function(event){
+        // console.log(event.currentTarget.dataset)
+        var postid = event.currentTarget.dataset.postid;
+        // console.log(postid) 
+
+        // 跳转到子界面
+
+        wx.navigateTo({
+            url: '/pages/posts/postDetail/postdetail',
+        })
+    },
     /**
      * 生命周期函数--监听页面加载 1
      */

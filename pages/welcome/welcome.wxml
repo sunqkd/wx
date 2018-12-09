@@ -3,10 +3,14 @@ view 相当于 div
 image 相当于 img
 text 文本标签 在手机上可以长按选中  text 可以嵌套
  -->
+<!-- 冒泡和非冒泡 
+  bind 有冒泡事件
+  catch 组织了冒泡事件
+ -->
 <view class="container">
     <image class="user_avator" src="/image/1.jpg"></image>
     <text class="user_name"><text style="color:red">hello</text>,12月</text>
-    <view class="moto_container">
+    <view class="moto_container" bindtap="onTap">
         <text class="moto">开启小程序之路</text>
     </view>
 </view>

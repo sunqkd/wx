@@ -1,4 +1,9 @@
+<!-- 引入模板 相对路径和绝对路径都可以 -->
+
+<import src="./post-item/post-item-template.wxml" />
+
 <view>
+
     <swiper indicator-dots="true" autoplay="true" interval="5000" circular="true">
         <swiper-item>
             <image src="/image/img1.jpg"></image>
@@ -10,20 +15,51 @@
             <image src="/image/img3.jpg"></image>
         </swiper-item>
     </swiper>
+
     <!-- 列表组件 -->
-    <view class="post-container">
+    <!-- block 标签把要循环的数据包起来 没有具体的的功能  默认为item，index可以省略 -->
+
+    <!-- template 模板 -->
+    <block wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+
+        <!-- <view class="post-container">
+            <view class="post-author-date">
+                <image class="post-author" src="{{item.author_img}}"></image>
+                <text class="post-date">{{item.date}}</text>
+            </view>
+            <text class="post-title">{{item.title}}</text>
+            <image class="post-image" src="{{item.post_img}}"></image>
+            <text class='post-content'>{{item.content}}</text>
+            <view class="post-like">
+                <image class="post-like-image" src="{{item.post_img}}"></image>
+                <text class="post-like-font">{{item.view_num}}</text>
+                <image class="post-like-image" src="{{item.post_img}}"></image>
+                <text class="post-like-font">{{item.collect_num}}</text>
+            </view>
+        </view> -->
+
+        <!-- template   自定义模板只能为wxml、wxss 并不是 自定义组件-->
+        <template is="postItem" data="{{item}}"></template>
+
+    </block>
+
+
+
+    <!-- <view class="post-container">
         <view class="post-author-date">
-            <image class="post-author" src='/image/1.jpg'></image>
+            <image class="post-author" src='/image/1.jpg' wx:if="{{false}}"></image>
             <text class="post-date">Nov 25 2018</text>
         </view>
         <text class="post-title">正是虾肥蟹壮时</text>
-        <image src="/image/img1.jpg"></image>
-        <text>正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时</text>
-        <view>
-            <image src='/image/1.jpg'></image>
-            <text>92</text>
-            <image src='/image/1.jpg'></image>
-            <text>45</text>
+        <image class="post-image" src="/image/img1.jpg"></image>
+        <text class='post-content'>正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时</text>
+        <view class="post-like">
+            <image class="post-like-image" src='/image/1.jpg'></image>
+            <text class="post-like-font">92</text>
+            <image class="post-like-image" src='/image/1.jpg'></image>
+            <text class="post-like-font">45</text>
         </view>
-    </view>
+    </view> -->
+
+
 </view>

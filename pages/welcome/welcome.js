@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        
     },
     // 开启小程序点击事件
     onTap: function(event) {

@@ -6,13 +6,13 @@
 
     <swiper indicator-dots="true" autoplay="true" interval="5000" circular="true">
         <swiper-item>
-            <image src="/image/img1.jpg"></image>
+            <image src="/image/img-bg.png"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/image/img2.png"></image>
+            <image src="/image/img-bg.png"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/image/img3.jpg"></image>
+            <image src="/image/img-bg.png"></image>
         </swiper-item>
     </swiper>
 

@@ -2,16 +2,17 @@ var app = getApp(); // 引入app.js
 var utils = require('../../utils/utils.js');
 
 Page({
-    // RESTFul  json 
-    // Soap xml
-
     /**
      * 页面的初始数据
      */
     data: {
         inTheaters: {},
         comingSoon: {},
-        top250: {}
+        top250: {},
+        searchResult: {},
+        containerShow: true,
+        searchPannelShow: false,
+        inputText: ''
     },
 
     /**
@@ -79,12 +80,12 @@ Page({
         this.setData(readyData); // 更新操作
         // console.log(this.data);
     },
-    onMoreTap:function(event){
+    onMoreTap: function(event) {
         var category = event.currentTarget.dataset.category;
         wx.navigateTo({
             url: './more-movie/more-movie?category=' + category,
             success: function(res) {
-                
+
             },
             fail: function(res) {
 
@@ -93,6 +94,40 @@ Page({
 
             },
         })
+    },
+
+    onBindFocus: function() { // 聚焦
+        this.setData({
+            containerShow: false,
+            searchPannelShow: true
+        })
+    },
+    onBindInput: function(event) { // 获取输入值
+
+    },
+    onBindBlur: function(event) { // 失去焦点
+        var text = event.detail.value;
+        this.setData({
+            inputText: text
+        });
+        var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+        this.getMovieListData(searchUrl, "searchResult", "");
+    },
+    onCancelImgTap: function() { // 取消方法
+        this.setData({
+            containerShow: true,
+            searchPannelShow: false,
+            searchResult: {},
+            inputText: ''
+        })
+    },
+    onBindConfirm: function(event) { // 回车事件
+        var text = event.detail.value;
+        this.setData({
+            inputText: text
+        });
+        var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+        this.getMovieListData(searchUrl, "searchResult", "");
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

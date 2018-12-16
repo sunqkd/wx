@@ -31,9 +31,9 @@ var local_database = [{
         dataTime: "25小时前",
         detail: "正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时",
         music: {
-            title: '日日夜夜-齐秦',
-            musicurl: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46',
-            coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'
+            title: '鬼迷心窍-李宗盛',
+            musicurl: "http://music.163.com/song/media/outer/url?id=108220.mp3",
+            coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R150x150M000002xOmp62kqSic.jpg?max_age=2592000'
         }
     },
     {
@@ -50,9 +50,9 @@ var local_database = [{
         dataTime: "26小时前",
         detail: "正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时正是虾肥蟹壮时",
         music: {
-            title: '6666',
-            musicurl: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46',
-            coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'
+            title: '女儿情',
+            musicurl: 'http://music.163.com/song/media/outer/url?id=27538254.mp3',
+            coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R150x150M000004Wv5BO30pPc0.jpg?max_age=2592000'
         }
     }
 ];

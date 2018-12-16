@@ -216,14 +216,23 @@ Page({
         // 监听音乐停止
         wx.onBackgroundAudioPause(() => {
 
-            this.setData({
-                isplayingMusic: false
+                this.setData({
+                    isplayingMusic: false
+                })
+
+                app.globalData.g_isPlayingMusic = false;
+                app.globalData.g_currentMusic = null;
+
+            }),
+            // 监听音乐停止
+
+            wx.onBackgroundAudioStop(() => {
+                this.setData({
+                    isplayingMusic: false
+                })
+                app.globalData.g_isPlayingMusic = false;
+                app.globalData.g_currentMusic = null;
             })
-
-            app.globalData.g_isPlayingMusic = false;
-            app.globalData.g_currentMusic = null;
-
-        })
     },
 
     /**

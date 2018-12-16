@@ -87,14 +87,8 @@ Page({
         this.setData({
             movies: totalMovies
         })
-        // 关闭导航等待
-        wx.hideNavigationBarLoading();
-    },
-    onscrolltolower: function() { // 上拉加载更多
-        var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=10";
-        util.http(nextUrl, this.getData);
-        // 设置导航等待
-        wx.showNavigationBarLoading();
+        wx.hideNavigationBarLoading();// 关闭导航等待
+        wx.stopPullDownRefresh(); // 停止下拉刷新
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -127,15 +121,25 @@ Page({
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function() {
-        console.log(13213)
+    onPullDownRefresh: function() { // 下拉刷新
+        // 初始化 
+        this.data.totalCount = 0;
+        this.data.isEmpty = true;
+        this.data.movies = [];
+        
+        var refreshUrl = this.data.requestUrl;
+        util.http(refreshUrl, this.getData);
+        wx.showNavigationBarLoading();
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function() {
-
+        var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=10";
+        util.http(nextUrl, this.getData);
+        // 设置导航等待
+        wx.showNavigationBarLoading();
     },
 
     /**

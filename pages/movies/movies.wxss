@@ -1,0 +1,9 @@
+@import "./movie-list/movie-list.wxss";
+
+.container{
+    background:#f2f2f2;
+}
+.movies-template{
+    margin-bottom:30rpx;
+}
+

@@ -9,7 +9,7 @@ Page({
     },
     // 开启小程序点击事件
     onTap: function(event) {
-        console.log("父组件");
+        // console.log("父组件");
         // 父子之间跳转 存在返回箭头 限制最多只有5级
 
         // wx.navigateTo({
@@ -17,8 +17,17 @@ Page({
         // })
 
         // 两个界面之间平行跳转 不存在返回箭头
-        wx.redirectTo({
+        // wx.redirectTo({
+        //     url: '/pages/posts/post',
+        // })
+        // 
+        wx.switchTab({
             url: '/pages/posts/post',
+            success: function(res) {
+                // console.log("跳转成功");
+            },
+            fail: function(res) {},
+            complete: function(res) {},
         })
 
         // redirectTo 完整写法

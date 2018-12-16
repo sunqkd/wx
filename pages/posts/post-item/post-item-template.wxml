@@ -12,6 +12,7 @@
         <view class="post-like">
             <image class="post-like-image" src="{{post_img}}"></image>
             <text class="post-like-font">{{view_num}}</text>
+            <!-- 两张图片 -->
             <image class="post-like-image" src="{{post_img}}"></image>
             <text class="post-like-font">{{collect_num}}</text>
         </view>

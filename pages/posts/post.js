@@ -11,7 +11,19 @@ Page({
     data: {
 
     },
-    onPostTap:function(event){
+    // swiper 点击事件
+    onSwiperTap: function(event){ // 事件冒泡机制
+    
+        // target 和 currentTarget 区别
+        // target: 当前点击的组件
+        // currentTarget: 事件捕获的组件
+        var postid = event.target.dataset.postid;
+        wx.navigateTo({
+            url: '/pages/posts/postDetail/postdetail?id=' + postid,
+        })
+
+    },
+    onPostTap: function(event) {
         // console.log(event.currentTarget.dataset)
         var postid = event.currentTarget.dataset.postid;
         // console.log(postid) 

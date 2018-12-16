@@ -1,10 +1,33 @@
 {
-    "pages":[
+    "pages": [
+        "pages/movies/movies",
         "pages/welcome/welcome",
         "pages/posts/post",
-        "pages/posts/postDetail/postdetail"
+        "pages/movies/movie/movie",
+        "pages/posts/postDetail/postdetail",
+        "pages/movies/stars/stars",
+        "pages/movies/movie-list/movie-list",
+        "pages/movies/more-movie/more-movie",
+        "pages/movies/movie-grid/movie-grid"
     ],
-    "window":{
-        "navigationBarBackgroundColor":"#b3d4db"
+    "window": {
+        "navigationBarBackgroundColor": "#b3d4db"
+    },
+    "tabBar": {
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/posts/post",
+                "text": "阅读",
+                "iconPath": "/image/1.png",
+                "selectedIconPath": "/image/1-1.png"
+            },
+            {
+                "pagePath": "pages/movies/movies",
+                "text": "电影",
+                "iconPath": "/image/2.png",
+                "selectedIconPath": "/image/2-1.png"
+            }
+        ]
     }
 }

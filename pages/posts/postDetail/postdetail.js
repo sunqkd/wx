@@ -1,4 +1,5 @@
 var postsData = require("../../../data/postdata.js");
+var app = getApp();
 
 Page({
 
@@ -9,6 +10,7 @@ Page({
         collected: false,
         id: null,
         isplayingMusic: false, // 音乐播放
+        postData: null,
     },
     // 收藏按钮
     onCollection: function(event) {
@@ -110,13 +112,14 @@ Page({
     // 音乐播放按钮
 
     onmusictap: function() {
+
         // var isplayingMusic = this.data.isplayingMusic;
         if (this.data.isplayingMusic) {
 
             wx.pauseBackgroundAudio(); // 暂停
 
             this.setData({
-                isplayingMusic:false
+                isplayingMusic: false
             })
 
         } else {
@@ -124,15 +127,15 @@ Page({
             wx.playBackgroundAudio({
                 dataUrl: postsData.postList[this.data.id].music.musicurl, // 音乐路径
                 title: postsData.postList[this.data.id].music.title, // 音乐标题
-                coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
+                coverImgUrl: postsData.postList[this.data.id].music.coverImgUrl,
                 success: function(res) {
-                    
+
                 },
                 fail: function(res) {
 
                 },
                 complete: function(res) {
-                    
+
                 },
             });
 
@@ -153,18 +156,18 @@ Page({
      */
     onLoad: function(options) { // 详情页面拿数据
 
+
+        var globalData = app.globalData
+
         var id = options.id; // 拿到?后面的参数
         this.setData({ // 记录id
             id: id
         })
-
         var postdata = postsData.postList[id];
         this.setData({
             postData: postdata
         });
-
         var postsCollected = wx.getStorageSync("posts_Collected"); // 读缓存
-
         if (postsCollected) {
             var pcollected = postsCollected[id]; // 读取其中的某一个文章 是不是读取状态
             if (pcollected) {
@@ -179,16 +182,49 @@ Page({
                     collected: false
                 })
             }
-
         } else { // 不存在则初始化
             var postsCollected_new = {};
             postsCollected_new[id] = false;
             wx.setStorageSync("posts_Collected", postsCollected_new);
         }
 
+
+        // 初始化音乐播放
+        if (app.globalData.g_isPlayingMusic && app.globalData.g_currentMusic == this.data.id) { // true
+            this.setData({
+                isplayingMusic: true
+            })
+        } else {
+
+        }
+
+        this.setAudioMonitor(); // 兼听音乐
+
     },
 
+    setAudioMonitor: function() {
+        // 监听音乐启动
+        wx.onBackgroundAudioPlay(() => {
 
+            this.setData({
+                isplayingMusic: true
+            })
+            app.globalData.g_isPlayingMusic = true;
+            app.globalData.g_currentMusic = this.data.id;
+
+        })
+        // 监听音乐停止
+        wx.onBackgroundAudioPause(() => {
+
+            this.setData({
+                isplayingMusic: false
+            })
+
+            app.globalData.g_isPlayingMusic = false;
+            app.globalData.g_currentMusic = null;
+
+        })
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -208,17 +244,16 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function() {
-        
+
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
     onUnload: function() {
-        wx.stopBackgroundAudio(); // 停止播放音乐
-        this.setData({
-            isplayingMusic: false, // 音乐播放
-        })
+        // console.log(132)
+        // wx.clearStorageSync(); // 清除缓存
+        // wx.stopBackgroundAudio(); // 停止播放音乐
     },
 
     /**

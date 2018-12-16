@@ -1,0 +1,11 @@
+<!--电影模板-->
+<!-- 引入星星模板 -->
+<import src="../stars/stars.wxml" />
+
+<template name="movieTemplate">
+    <view class="movie-container">
+        <image class="movie-img" src="{{coverageUrl}}"></image>
+        <text class="movie-title">{{title}}</text>
+        <template is="starsTemplate" data="{{average:average,stars:stars}}"></template>
+    </view>
+</template>

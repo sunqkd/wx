@@ -1,0 +1,39 @@
+<form bindsubmit="onsubmit" bindreset="onreset">
+
+    <view>
+        <switch name="switch" checked="{{true}}" type="switch" color='red' bindchange='onBindChange'></switch>
+    </view>
+
+    <view>
+        <slider name="slider" min="0" max="500" show-value="true" value="50" step='1'></slider>
+    </view>
+
+    <view>
+        <radio-group bindchange="onradiochange" name="radio-group">
+            <label>
+                <radio value="radio1" checked='true'>123</radio>
+
+            </label>
+            <label>
+                <radio value="radio2">456</radio>
+            </label>
+        </radio-group>
+    </view>
+    <view>
+        <checkbox-group bindchange="onCheckedBox"  name="checkbox">
+            <label>
+                <checkbox value="456" checked='true'>456</checkbox>
+            </label>
+            <label>
+                <checkbox value="46">46</checkbox>
+            </label>
+        </checkbox-group>
+    </view>
+
+
+    <view>
+        <button form-type='submit'>submit</button>
+        <button form-type='reset'>reset</button>
+    </view>
+
+</form>

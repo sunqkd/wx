@@ -90,6 +90,15 @@ Page({
         wx.hideNavigationBarLoading();// 关闭导航等待
         wx.stopPullDownRefresh(); // 停止下拉刷新
     },
+    onMovieTap: function (event) { // 跳转到详情页
+        var movieid = event.currentTarget.dataset.movieid;
+        wx.navigateTo({
+            url: '../movie-detail/movie-detail?id=' + movieid,
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

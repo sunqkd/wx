@@ -1,4 +1,4 @@
-// pages/movie/movie.js
+// pages/form/form.js
 Page({
 
     /**
@@ -7,13 +7,28 @@ Page({
     data: {
 
     },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
 
     },
-
+    onBindChange:function(e){
+        console.log(e.detail.value);
+    },
+    onradiochange:function(e){
+        console.log(e)
+    },
+    onCheckedBox:function(e){
+        console.log(e.detail.value)
+    },
+    onsubmit:function(e){
+        console.log(e)
+    },
+    onreset:function(e){
+        console.log(e)
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

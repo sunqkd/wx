@@ -129,6 +129,17 @@ Page({
         var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
         this.getMovieListData(searchUrl, "searchResult", "");
     },
+
+    onMovieTap:function(event){ // 跳转到详情页
+        var movieid = event.currentTarget.dataset.movieid;
+        wx.navigateTo({
+            url: './movie-detail/movie-detail?id=' + movieid,
+            success: function(res) {},
+            fail: function(res) {},
+            complete: function(res) {},
+        })
+    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
